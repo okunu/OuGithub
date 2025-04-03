@@ -49,5 +49,7 @@ android github客户端，主要有如下功能：
 
 ![image](https://github.com/user-attachments/assets/d540aa2a-fa33-41c4-b5cb-34a94a5ad525)
 
+# 测试用例：
+暂时只做了1个，后面继续完善
 
 
