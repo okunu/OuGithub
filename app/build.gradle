@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.okunu.github'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.okunu.github"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+
+    implementation rootProject.ext.libraries.androidx_core
+    implementation rootProject.ext.libraries.appcompat
+    implementation rootProject.ext.libraries.material
+
+    implementation rootProject.ext.libraries.constraint_layout
+    implementation rootProject.ext.libraries.lifecycle_viewmodel
+    implementation rootProject.ext.libraries.lifecycle_livedata
+    implementation rootProject.ext.libraries.lifecycle_runtime
+    implementation rootProject.ext.libraries.kotlin_stdlib
+    implementation rootProject.ext.libraries.arouter
+    kapt rootProject.ext.libraries.arouter_compiler
+    implementation rootProject.ext.libraries.retrofit
+    implementation rootProject.ext.libraries.gson
+
+    implementation project(path: ':componetbridge')
+    implementation project(path: ':basic')
+    implementation project(path: ':common')
+    implementation project(path: ':login')
+    implementation project(path: ':search')
+    implementation project(path: ':repos')
+    implementation project(path: ':user')
+    implementation project(path: ':webview')
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

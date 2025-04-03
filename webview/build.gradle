@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+apply from: rootProject.file('base_build.gradle')
+
+android {
+    namespace 'com.okunu.webview'
+}
+
+dependencies {
+
+    implementation project(path: ':basic')
+    implementation project(path: ':componetbridge')
+    api project(path: ':common')
+    api project(path: ':network')
+
+    implementation rootProject.ext.libraries.lifecycle_viewmodel
+    implementation rootProject.ext.libraries.lifecycle_livedata
+    implementation rootProject.ext.libraries.lifecycle_runtime
+
+    implementation rootProject.ext.libraries.arouter
+    kapt rootProject.ext.libraries.arouter_compiler
+
+    implementation rootProject.ext.libraries.retrofit
+
+    implementation rootProject.ext.libraries.androidx_core
+    implementation rootProject.ext.libraries.appcompat
+    implementation rootProject.ext.libraries.material
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

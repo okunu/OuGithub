@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">OuGithub</string>
+
+    <string name="welcome_image_view">welcome image view</string>
+    <string name="sign_in_to_github">Sign in to Github</string>
+    <string name="username_or_email_address">Username or email address</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="authorize">Authorize</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="repository">Repository</string>
+    <string name="notification">Notification</string>
+    <string name="user">User</string>
+    <string name="press_again_to_exit_app">再按一次退出应用</string>
+</resources>

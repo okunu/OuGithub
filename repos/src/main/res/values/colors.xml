@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="reposColorPrimary">#008577</color>
+    <color name="reposColorPrimaryDark">#00574B</color>
+    <color name="reposColorAccent">#D81B60</color>
+    <color name="semi_transparent_button">#99FFFFFF</color>
+    <color name="issue_button_bg_color">#FFF5F5F5</color>
+</resources>

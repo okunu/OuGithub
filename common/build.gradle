@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+apply from: rootProject.file('base_build.gradle')
+
+android {
+    namespace 'com.okunu.common'
+}
+
+dependencies {
+
+    implementation rootProject.ext.libraries.androidx_core
+    implementation rootProject.ext.libraries.appcompat
+    implementation rootProject.ext.libraries.material
+
+    implementation rootProject.ext.libraries.lifecycle_viewmodel
+    implementation rootProject.ext.libraries.lifecycle_livedata
+    implementation rootProject.ext.libraries.lifecycle_runtime
+
+    implementation rootProject.ext.libraries.swiperefreshlayout
+
+    implementation rootProject.ext.libraries.gson
+
+    implementation rootProject.ext.libraries.glide
+    kapt rootProject.ext.libraries.glide_compiler
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

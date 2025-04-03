@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="vm"
+                type="com.okunu.repos.vm.CreateIssueVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            tools:context=".CreateIssueActivity">
+
+        <TextView
+            android:id="@+id/create_issue_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.repoName}"
+            android:textColor="@color/color_2175F3"
+            android:textSize="@dimen/largest_text_size"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/vertical_space"
+            tools:text="Submit Issue" />
+
+        <EditText
+            android:id="@+id/create_issue_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter issue description"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginStart="@dimen/horizontal_space"
+            android:layout_marginEnd="@dimen/horizontal_space"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_issue_title"
+            app:addTextChangedListener="@{vm.issueTextChangedListener}"
+             />
+
+        <Button
+            android:id="@+id/create_issue__button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginStart="@dimen/horizontal_space"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_issue_description"
+            android:onClick="@{() -> vm.submitIssue()}"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
